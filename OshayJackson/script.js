@@ -14,7 +14,6 @@ letters = letters.split("");
 // Setting up the columns
 var fontSize = 10,
   columns = canvas.width / fontSize;
-
 // Setting up the drops
 var drops = [];
 for (var i = 0; i < columns; i++) {
