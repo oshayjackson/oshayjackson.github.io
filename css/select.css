@@ -14,11 +14,11 @@ a2[href] {
   font-family: sans-serif;
   font-size: 30pt;
 }
-section {
+/* section {
   color: tomato;
   font-family: sans-serif;
   font-size: 30pt;
-}
+} */
 
 /* Class selectors */
 .headerColor {
@@ -28,11 +28,12 @@ section {
 }
 
 /* & Nesting Selectors */
-.nesting &:hover &:focus {
-  font-family: "Times New Roman";
-  font-size: 20pt;
-  &:hover,
-  &:focus {
-    color: lavenderblush background-color, rgb(0, 255, 128);
+.nest01 {
+  background-color: rgb(0, 255, 128);
+  background: linear-gradient(90deg, rgb(203, 207, 246), rgb(195, 42, 106), rgb(63, 63, 209));
+  & > h1 {
+    font-family: "Segoe UI";
+    color: purple;
+    font-size: 50pt;
   }
 }
