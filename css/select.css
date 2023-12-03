@@ -20,7 +20,7 @@ body {
   background: rgb(38, 38, 46);
   min-height: 100vh;
   display: grid;
-  place-content: center;
+  justify-content: space-evenly;
 }
 .card {
   block-size: 75vh;
@@ -92,7 +92,6 @@ body {
   --color19: #0091ff;
   --color20: #0084ff;
 }
-
 #cardHeader {
   text-align: center;
   font-family: monospace;
@@ -101,11 +100,6 @@ body {
   justify-content: center;
   margin: 3%;
 }
-a {
-  color: rgb(255, 255, 255);
-  text-decoration-line: none;
-}
-
 @keyframes ambientButton {
   0% {
     background-position: 100% 0;
@@ -114,35 +108,33 @@ a {
     background-position: 0 0;
   }
 }
-
-.goGit {
-  border-color: linear-gradient(
-    to right,
-    #00f2ff,
-    #00e5ff,
-    #00d9ff,
-    #00ccff,
-    #00c3ff,
-    #00b7ff,
-    #00aaff,
-    #009dff,
-    #0091ff,
-    #0084ff
-  );
-  animation: rotation 2s linear infinite;
-  border-radius: inherit;
-  font-family: monospace;
-  font-size: 15pt;
-  text-align: center;
-  display: inline-block;
-
-  justify-content: space-evenly;
-  border-radius: 1.5rem;
-
-  width: 9vh;
+a {
+  color: rgb(255, 255, 255);
+  text-decoration-line: none;
+}
+.buttoN {
+  block-size: 3vh;
+  min-height: 3vh;
+  padding-block: 0.01%;
+  margin-left: 20px;
+  margin-right: 20px;
   aspect-ratio: 1/0.01;
+  position: relative;
+  border-radius: 1.5rem;
   background: linear-gradient(
-    from var(--ambient-button),
+    90deg,
+    hsla(218, 31%, 17%, 1) 0%,
+    hsla(0, 0%, 31%, 1) 100%,
+    hsla(200, 6%, 19%, 1) 100%
+  );
+}
+.buttoN::before,
+.buttoN::after {
+  content: "";
+  position: absolute;
+  inset: -0.1rem;
+  z-index: -1;
+  background: conic-gradient(
     var(--color01),
     var(--color02),
     var(--color03),
@@ -161,6 +153,20 @@ a {
     var(--color02),
     var(--color01)
   );
-  background-size: 200% 100%;
-  animation: ambientButton 1s linear infinite;
+  border-radius: inherit;
+  animation: 2s linear infinite;
 }
+.buttoN::after {
+  filter: blur(2rem);
+}
+/* border-radius: inherit;
+  font-family: monospace;
+  font-size: 15pt;
+  text-align: center;
+  display: inline-block;
+
+  width: 9vh;
+
+  background-size: 200% 100%;
+  animation: var(--gradient-angle) 1s linear infinite;
+} */

@@ -1,0 +1,17 @@
+@property --ambient-loop {
+  syntax: "<angle>";
+  initial-value: 0deg;
+  inherits: false;
+}
+@keyframes rotation {
+  0% {
+    --ambient-loop: 0deg;
+  }
+  100% {
+    --ambient-loop: 360deg;
+  }
+}
+
+* {
+  outline: 10px solid red;
+}
