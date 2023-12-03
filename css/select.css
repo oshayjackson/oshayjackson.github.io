@@ -3,6 +3,11 @@
   initial-value: 0deg;
   inherits: false;
 }
+@property --ambient-button {
+  syntax: "<button>";
+  initial-value: 0deg;
+  inherits: false;
+}
 @keyframes rotation {
   0% {
     --gradient-angle: 0deg;
@@ -95,4 +100,67 @@ body {
   color: rgb(214, 214, 214);
   justify-content: center;
   margin: 3%;
+}
+a {
+  color: rgb(255, 255, 255);
+  text-decoration-line: none;
+}
+
+@keyframes ambientButton {
+  0% {
+    background-position: 100% 0;
+  }
+  100% {
+    background-position: 0 0;
+  }
+}
+
+.goGit {
+  border-color: linear-gradient(
+    to right,
+    #00f2ff,
+    #00e5ff,
+    #00d9ff,
+    #00ccff,
+    #00c3ff,
+    #00b7ff,
+    #00aaff,
+    #009dff,
+    #0091ff,
+    #0084ff
+  );
+  animation: rotation 2s linear infinite;
+  border-radius: inherit;
+  font-family: monospace;
+  font-size: 15pt;
+  text-align: center;
+  display: inline-block;
+
+  justify-content: space-evenly;
+  border-radius: 1.5rem;
+
+  width: 9vh;
+  aspect-ratio: 1/0.01;
+  background: linear-gradient(
+    from var(--ambient-button),
+    var(--color01),
+    var(--color02),
+    var(--color03),
+    var(--color04),
+    var(--color05),
+    var(--color06),
+    var(--color07),
+    var(--color08),
+    var(--color09),
+    var(--color08),
+    var(--color07),
+    var(--color06),
+    var(--color05),
+    var(--color04),
+    var(--color03),
+    var(--color02),
+    var(--color01)
+  );
+  background-size: 200% 100%;
+  animation: ambientButton 1s linear infinite;
 }
