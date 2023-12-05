@@ -1,8 +1,13 @@
 HTML {
+  max-width: 100%;
+  aspect-ratio: auto;
   height: 100vh;
   padding: 5rem;
   background: var(--darkblueG);
   min-height: 100vh; /*   MEDIA QUERY    */
+  display: flex;
+  justify-content: flex-start;
+  padding: 5%;
 }
 body {
   width: 50rem;
@@ -23,11 +28,10 @@ img {
 }
 .header-container {
   display: flex;
-  align-items: center; /* Center items vertically */
+  align-items: center;
 }
 
 .box {
-  /* Your existing styles for h1 */
   font-size: 25pt;
   color: rgb(214, 214, 214);
 }
@@ -40,21 +44,25 @@ img {
 }
 
 a {
-  border-radius: 5rem;
   color: white;
   text-decoration: none;
-  background-color: none;
+  background-color: transparent;
 }
+/* top of the screen for listed items referencing my nav bar */
 #top li {
   position: relative;
+  display: inline-flex;
   overflow: hidden;
+  background-color: transparent;
   transition: font-size 1s;
 }
-
+/* on hover increase the font size to simulate magnification */
 #top li:hover {
   font-size: 50pt;
+  border: transparent;
+  text-overflow: hidden;
 }
-
+/* content while its in a resting normal state */
 #top li::before {
   content: "";
   position: absolute;
@@ -62,39 +70,44 @@ a {
   left: 50%;
   width: 0;
   height: 0;
-  padding: 1%;
+  padding: 0%;
   border-radius: 50rem;
-  display: block;
+  display: flexbox;
   backdrop-filter: blur(1rem);
+  color: transparent; /* eagerly tryng to find a way to get rid of that annoying block  */
   transform: translate(-50%, -50%);
   transition: width 0.1s, height 0.1s;
+  border-radius: 5rem;
+  background: transparent;
 }
-
+/* manipulates the sizes of the list items while hovering before hover over other  */
 #top li:hover::before {
   width: 1000px;
   height: 1000px;
 }
 
 #top {
+  background: transparent;
+  flood-opacity: 0%;
   font-size: 10pt;
   width: inherit;
   border-radius: 5rem;
-  padding-top: 2%;
+  padding-top: 0%;
   list-style-type: none;
   display: flex;
   align-items: center;
   justify-content: space-evenly;
-  backdrop-filter: blur(5px); /* Add blur effect to the entire container */
+  backdrop-filter: blur(0%);
 }
 
 #a1 {
   position: fixed;
-  top: 0; /* Place the nav bar at the top of the viewport */
-  width: 50rem; /* Occupy full width of the viewport */
+  top: 0;
+  width: 50rem;
   z-index: 1000;
 }
 .card {
-  margin-top: 4%; /* Adjust margin to push content below the fixed nav bar */
+  margin-top: 4%;
   padding: 3%;
   block-size: 80vh;
   min-height: 60vh;
@@ -111,10 +124,10 @@ a {
 
 .card::before,
 .card::after {
-  content: ""; /* ensuring content shows up on the screen */
+  content: "";
   position: absolute;
   inset: -0.1rem; /* top bottom left right zero */
-  z-index: -1; /*   Z-INDEX IS BACK 2 LAYERS   */
+  z-index: -1;
   background: conic-gradient(
     from var(--gradient-angle),
     var(--color19),
