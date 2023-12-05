@@ -1,29 +1,102 @@
-@property --gradient-angle {
-  syntax: "<angle>";
-  initial-value: 0deg;
-  inherits: false;
-}
-@property --ambient-button {
-  syntax: "<button>";
-  initial-value: 0deg;
-  inherits: false;
-}
-@keyframes rotation {
-  0% {
-    --gradient-angle: 0deg;
-  }
-  100% {
-    --gradient-angle: 360deg;
-  }
+HTML {
+  height: 100vh;
+  padding: 5rem;
+  background: var(--darkblueG);
+  min-height: 100vh; /*   MEDIA QUERY    */
 }
 body {
-  background: rgb(38, 38, 46);
-  min-height: 100vh;
-  display: grid;
+  width: 50rem;
+  margin: 0;
+  padding: 0;
+  color: rgba(255, 255, 255, 0.772);
+  font-family: Chalkboard;
+  display: flex;
+  flex-direction: column; /* stacking */
+}
+img {
+  display: flex;
+  margin: 1%;
+  border-radius: 1rem;
+  position: static;
+  height: 15vh;
+  width: inherit;
+}
+.header-container {
+  display: flex;
+  align-items: center; /* Center items vertically */
+}
+
+.box {
+  /* Your existing styles for h1 */
+  font-size: 25pt;
+  color: rgb(214, 214, 214);
+}
+
+.header-image {
+  margin-left: 1%;
+  border-radius: 1rem;
+  height: 15vh;
+  width: auto;
+}
+
+a {
+  border-radius: 5rem;
+  color: white;
+  text-decoration: none;
+  background-color: none;
+}
+#top li {
+  position: relative;
+  overflow: hidden;
+  transition: font-size 1s;
+}
+
+#top li:hover {
+  font-size: 50pt;
+}
+
+#top li::before {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 0;
+  height: 0;
+  padding: 1%;
+  border-radius: 50rem;
+  display: block;
+  backdrop-filter: blur(1rem);
+  transform: translate(-50%, -50%);
+  transition: width 0.1s, height 0.1s;
+}
+
+#top li:hover::before {
+  width: 1000px;
+  height: 1000px;
+}
+
+#top {
+  font-size: 10pt;
+  width: inherit;
+  border-radius: 5rem;
+  padding-top: 2%;
+  list-style-type: none;
+  display: flex;
+  align-items: center;
   justify-content: space-evenly;
+  backdrop-filter: blur(5px); /* Add blur effect to the entire container */
+}
+
+#a1 {
+  position: fixed;
+  top: 0; /* Place the nav bar at the top of the viewport */
+  width: 50rem; /* Occupy full width of the viewport */
+  z-index: 1000;
 }
 .card {
-  block-size: 75vh;
+  margin-top: 4%; /* Adjust margin to push content below the fixed nav bar */
+  padding: 3%;
+  block-size: 80vh;
   min-height: 60vh;
   aspect-ratio: 1/1.5;
   position: relative;
@@ -35,12 +108,13 @@ body {
     hsla(200, 6%, 19%, 1) 100%
   );
 }
+
 .card::before,
 .card::after {
   content: ""; /* ensuring content shows up on the screen */
   position: absolute;
   inset: -0.1rem; /* top bottom left right zero */
-  z-index: -1;
+  z-index: -1; /*   Z-INDEX IS BACK 2 LAYERS   */
   background: conic-gradient(
     from var(--gradient-angle),
     var(--color19),
@@ -62,10 +136,31 @@ body {
     var(--color19)
   );
   border-radius: inherit; /* inherits the parents border radius */
-  animation: rotation 2s linear infinite;
+  animation: rotation 1.9s linear infinite;
 }
 .card::after {
-  filter: blur(2rem);
+  filter: blur(3rem);
+}
+#cardHeader {
+  text-align: center;
+  font-family: Chalkboard;
+  font-size: 25pt;
+  color: rgb(214, 214, 214);
+  justify-content: center;
+}
+
+@property --gradient-angle {
+  syntax: "<angle>";
+  initial-value: 0deg;
+  inherits: false;
+}
+@keyframes rotation {
+  0% {
+    --gradient-angle: 0deg;
+  }
+  100% {
+    --gradient-angle: 360deg;
+  }
 }
 :root {
   /*------ PALETTE 1 */
@@ -91,82 +186,103 @@ body {
   --color18: #009dff;
   --color19: #0091ff;
   --color20: #0084ff;
-}
-#cardHeader {
-  text-align: center;
-  font-family: monospace;
-  font-size: 25pt;
-  color: rgb(214, 214, 214);
-  justify-content: center;
-  margin: 3%;
-}
-@keyframes ambientButton {
-  0% {
-    background-position: 100% 0;
-  }
-  100% {
-    background-position: 0 0;
-  }
-}
-a {
-  color: rgb(255, 255, 255);
-  text-decoration-line: none;
-}
-.buttoN {
-  block-size: 3vh;
-  min-height: 3vh;
-  padding-block: 0.01%;
-  margin-left: 20px;
-  margin-right: 20px;
-  aspect-ratio: 1/0.01;
-  position: relative;
-  border-radius: 1.5rem;
-  background: linear-gradient(
-    90deg,
-    hsla(218, 31%, 17%, 1) 0%,
-    hsla(0, 0%, 31%, 1) 100%,
-    hsla(200, 6%, 19%, 1) 100%
+  --purpleG: linear-gradient(
+    300deg,
+    #1e2334ff,
+    #1f2335ff,
+    #1f2335ff,
+    #202236ff,
+    #202236ff,
+    #212237ff,
+    #212237ff,
+    #222138ff,
+    #222138ff,
+    #232139ff,
+    #23213aff,
+    #24203aff,
+    #24203bff,
+    #25203bff,
+    #25203cff,
+    #261f3cff,
+    #261f3dff,
+    #271f3dff,
+    #271f3eff,
+    #281e3eff,
+    #281e3fff,
+    #291e40ff,
+    #291e40ff,
+    #2a1d41ff,
+    #2a1d41ff,
+    #2b1d42ff,
+    #2b1d42ff,
+    #2c1c43ff,
+    #2c1c43ff,
+    #2d1c44ff
+  );
+  --darkblueG: linear-gradient(
+    100deg,
+    #1d2644ff,
+    #1d2643ff,
+    #1e2642ff,
+    #1e2641ff,
+    #1f2640ff,
+    #1f263fff,
+    #1f263eff,
+    #20263dff,
+    #20273dff,
+    #20273cff,
+    #21273bff,
+    #21273aff,
+    #222739ff,
+    #222738ff,
+    #222737ff,
+    #232736ff,
+    #232735ff,
+    #232734ff,
+    #242733ff,
+    #242732ff,
+    #252731ff,
+    #252730ff,
+    #252830ff,
+    #26282fff,
+    #26282eff,
+    #26282dff,
+    #27282cff,
+    #27282bff,
+    #28282aff,
+    #282829ff
+  );
+  --whiteMintG: linear-gradient(
+    45deg,
+    #ffffffff,
+    #f9fffdff,
+    #f3fffaff,
+    #edfff8ff,
+    #e7fff6ff,
+    #e1fff4ff,
+    #dbfff1ff,
+    #d5ffefff,
+    #cfffedff,
+    #c9ffebff,
+    #c3ffe8ff,
+    #bdffe6ff,
+    #b7ffe4ff,
+    #b1ffe1ff,
+    #abffdfff,
+    #a6ffddff,
+    #a0ffdbff,
+    #9affd8ff,
+    #94ffd6ff,
+    #8effd4ff,
+    #88ffd1ff,
+    #82ffcfff,
+    #7cffcdff,
+    #76ffcbff,
+    #70ffc8ff,
+    #6affc6ff,
+    #64ffc4ff,
+    #5effc2ff,
+    #58ffbfff,
+    #52ffbdff
   );
 }
-.buttoN::before,
-.buttoN::after {
-  content: "";
-  position: absolute;
-  inset: -0.1rem;
-  z-index: -1;
-  background: conic-gradient(
-    var(--color01),
-    var(--color02),
-    var(--color03),
-    var(--color04),
-    var(--color05),
-    var(--color06),
-    var(--color07),
-    var(--color08),
-    var(--color09),
-    var(--color08),
-    var(--color07),
-    var(--color06),
-    var(--color05),
-    var(--color04),
-    var(--color03),
-    var(--color02),
-    var(--color01)
-  );
-  border-radius: inherit;
-  animation: 2s linear infinite;
-}
-.buttoN::after {
-  filter: blur(2rem);
-}
-/* border-radius: inherit;
-  font-family: monospace;
-  font-size: 15pt;
-  text-align: center;
-  display: inline-block;
-
-  width: 9vh;
-
-  background-size: 200% 100%;
-  animation: var(--gradient-angle) 1s linear infinite;
-} */
