@@ -299,3 +299,17 @@ a {
     #52ffbdff
   );
 }
+
+@media screen and (width: 100%) {
+  .card::after {
+    filter: blur(5rem);
+  }
+}
+
+@media screen and (max-width <= 100%) {
+  viewport-fit {
+    max-width: fit-content;
+    max-height: inherit;
+    will-change: auto;
+  }
+}
