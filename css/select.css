@@ -46,7 +46,6 @@ img {
 a {
   color: white;
   text-decoration: none;
-  background-color: transparent;
 }
 /* top of the screen for listed items referencing my nav bar */
 #top li {
@@ -59,7 +58,7 @@ a {
 /* on hover increase the font size to simulate magnification */
 #top li:hover {
   font-size: 50pt;
-  border: transparent;
+
   text-overflow: hidden;
 }
 /* content while its in a resting normal state */
@@ -78,7 +77,6 @@ a {
   transform: translate(-50%, -50%);
   transition: width 0.1s, height 0.1s;
   border-radius: 5rem;
-  background: transparent;
 }
 /* manipulates the sizes of the list items while hovering before hover over other  */
 #top li:hover::before {
