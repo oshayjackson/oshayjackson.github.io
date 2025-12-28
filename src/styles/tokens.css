@@ -1,0 +1,22 @@
+:root {
+  /* Layout */
+  --max-width: 1040px;
+  --page-padding: 20px;
+  --radius: 16px;
+
+  /* Typography */
+  --font-sans: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto,
+    Helvetica, Arial, "Apple Color Emoji", "Segoe UI Emoji";
+  --text-base: 16px;
+
+  /* Colors (defaults; pages can override via CSS vars) */
+  --bg: #0b0c10;
+  --panel: rgba(255, 255, 255, 0.06);
+  --border: rgba(255, 255, 255, 0.12);
+  --text: rgba(255, 255, 255, 0.92);
+  --muted: rgba(255, 255, 255, 0.72);
+  --accent: #7c5cff;
+
+  /* Effects */
+  --shadow: 0 10px 30px rgba(0, 0, 0, 0.35);
+}

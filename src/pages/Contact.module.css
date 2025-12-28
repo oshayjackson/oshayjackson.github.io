@@ -1,0 +1,29 @@
+.page {
+  --accent: #60a5fa;
+  display: grid;
+  gap: 18px;
+}
+
+.card {
+  padding: 18px;
+}
+
+.row {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 12px;
+}
+
+.label {
+  color: var(--muted);
+}
+
+.value {
+  color: var(--text);
+  border-bottom: 1px solid color-mix(in srgb, var(--accent) 55%, transparent);
+}
+
+.value:hover {
+  text-decoration: none;
+}

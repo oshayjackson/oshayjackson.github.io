@@ -1,35 +1,60 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
-import './App.css'
+import { NavLink, Route, Routes } from "react-router-dom";
+import Home from "./pages/Home";
+import Projects from "./pages/Projects";
+import About from "./pages/About";
+import Contact from "./pages/Contact";
+import styles from "./App.module.css";
 
-function App() {
-  const [count, setCount] = useState(0)
-
+export default function App() {
   return (
-    <>
-      <div>
-        <a href="https://vite.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
-      </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.tsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
-    </>
-  )
-}
+    <div className={styles.app}>
+      <header className={styles.header}>
+        <div className={`container ${styles.headerInner}`}>
+          <NavLink to="/" className={styles.brand}>
+            Oshay Jackson
+          </NavLink>
 
-export default App
+          <nav className={styles.nav}>
+            <NavLink to="/" end className={styles.link}>
+              Home
+            </NavLink>
+            <NavLink to="/projects" className={styles.link}>
+              Projects
+            </NavLink>
+            <NavLink to="/about" className={styles.link}>
+              About
+            </NavLink>
+            <NavLink to="/contact" className={styles.link}>
+              Contact
+            </NavLink>
+          </nav>
+        </div>
+      </header>
+
+      <main className={`container ${styles.main}`}>
+        <Routes>
+          <Route path="/" element={<Home />} />
+          <Route path="/projects" element={<Projects />} />
+          <Route path="/about" element={<About />} />
+          <Route path="/contact" element={<Contact />} />
+        </Routes>
+      </main>
+
+      <footer className={styles.footer}>
+        <div className={`container ${styles.footerInner}`}>
+          <span>© {new Date().getFullYear()} Oshay Jackson</span>
+          <div className={styles.footerLinks}>
+            <a
+              href="https://github.com/oshayjackson"
+              target="_blank"
+              rel="noreferrer"
+            >
+              GitHub
+            </a>
+            <a href="mailto:you@example.com">Email</a>
+          </div>
+        </div>
+      </footer>
+    </div>
+  );
+}

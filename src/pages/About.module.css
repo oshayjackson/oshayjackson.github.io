@@ -1,0 +1,22 @@
+.page {
+  --accent: #f59e0b;
+  display: grid;
+  gap: 18px;
+}
+
+.card {
+  padding: 18px;
+  border-left: 2px solid color-mix(in srgb, var(--accent) 60%, transparent);
+}
+
+.h2 {
+  margin: 0 0 8px;
+  font-size: 18px;
+}
+
+.list {
+  margin: 0;
+  padding-left: 18px;
+  color: var(--muted);
+  line-height: 1.7;
+}
