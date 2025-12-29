@@ -1,0 +1,80 @@
+.page {
+  /* Page personality */
+  --accent: #22c55e;
+  display: grid;
+  gap: 18px;
+}
+
+.back {
+  color: var(--muted);
+  width: fit-content;
+}
+
+.back:hover {
+  color: var(--text);
+  text-decoration: none;
+}
+
+.titleBlock {
+  display: grid;
+  gap: 10px;
+}
+
+.sections {
+  display: grid;
+  gap: 16px;
+}
+
+.sectionCard {
+  padding: 18px;
+}
+
+.h2 {
+  margin: 0 0 8px;
+  font-size: 18px;
+}
+
+.p {
+  margin: 0;
+  color: var(--muted);
+  line-height: 1.7;
+}
+
+.list {
+  margin: 0;
+  padding-left: 18px;
+  color: var(--muted);
+  line-height: 1.7;
+}
+
+.tags {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.tag {
+  font-size: 12px;
+  padding: 6px 10px;
+  border-radius: 999px;
+  border: 1px solid var(--border);
+  background: rgba(255, 255, 255, 0.03);
+  color: var(--muted);
+}
+
+.links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+}
+
+.link {
+  border-bottom: 1px solid color-mix(in srgb, var(--accent) 55%, transparent);
+}
+
+.link:hover {
+  text-decoration: none;
+}
