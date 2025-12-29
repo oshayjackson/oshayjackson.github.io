@@ -1,11 +1,16 @@
 import { Link, useParams } from "react-router-dom";
 import { projects } from "../content/projects";
 import styles from "./ProjectDetail.module.css";
+import useDocumentTitle from "../hooks/useDocumentTitle";
 
 export default function ProjectDetail() {
   const { slug } = useParams<{ slug: string }>();
 
   const project = projects.find((p) => p.slug === slug);
+  const title = project
+    ? `${project.title} — Oshay Jackson`
+    : "Project — Oshay Jackson";
+  useDocumentTitle(title);
 
   if (!project) {
     return (
@@ -73,6 +78,24 @@ export default function ProjectDetail() {
           </div>
         ) : null}
       </div>
+
+      {project.caseStudy?.sections?.length ? (
+        <div className={`card ${styles.article}`}>
+          <div className={styles.articleHeader}>
+            <h2 className={styles.articleTitle}>Case Study</h2>
+            <p className={styles.p}>
+              Concise notes on goals, decisions, and outcomes for this project.
+            </p>
+          </div>
+
+          {project.caseStudy.sections.map((section) => (
+            <section key={section.title} className={styles.articleSection}>
+              <h3 className={styles.sectionTitle}>{section.title}</h3>
+              <p className={styles.body}>{section.paragraphs.join(" ")}</p>
+            </section>
+          ))}
+        </div>
+      ) : null}
     </section>
   );
 }

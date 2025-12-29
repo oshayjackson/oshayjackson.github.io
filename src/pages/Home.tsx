@@ -1,6 +1,9 @@
 import styles from "./Home.module.css";
+import useDocumentTitle from "../hooks/useDocumentTitle";
 
 export default function Home() {
+  useDocumentTitle("Oshay Jackson");
+
   return (
     <section className={styles.page}>
       <div className={styles.hero}>

@@ -78,3 +78,51 @@
 .link:hover {
   text-decoration: none;
 }
+
+.article {
+  padding: 22px;
+  display: grid;
+  gap: 12px;
+}
+
+.articleHeader {
+  display: grid;
+  gap: 6px;
+  padding-bottom: 12px;
+  border-bottom: 1px solid var(--border);
+}
+
+.articleTitle {
+  margin: 0;
+  font-size: 18px;
+  font-weight: 700;
+}
+
+.articleSection {
+  display: grid;
+  gap: 6px;
+  padding-top: 14px;
+}
+
+.articleSection + .articleSection {
+  border-top: 1px solid var(--border);
+  padding-top: 14px;
+}
+
+.sectionTitle {
+  margin: 0;
+  font-size: 16px;
+  letter-spacing: 0.6px;
+  text-transform: uppercase;
+  font-weight: 600;
+  color: color-mix(in srgb, var(--accent) 70%, var(--text));
+}
+
+.body {
+  margin: 0;
+  color: var(--muted);
+  line-height: 1.6;
+  max-width: 100ch;
+  text-wrap: pretty;
+  overflow-wrap: anywhere;
+}

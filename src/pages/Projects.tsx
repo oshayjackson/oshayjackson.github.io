@@ -1,8 +1,11 @@
 import styles from "./Projects.module.css";
 import { projects } from "../content/projects";
 import ProjectCard from "../components/projects/ProjectCard";
+import useDocumentTitle from "../hooks/useDocumentTitle";
 
 export default function Projects() {
+  useDocumentTitle("Projects — Oshay Jackson");
+
   return (
     <section className={styles.page}>
       <header className={styles.header}>
