@@ -1,14 +1,20 @@
-import { NavLink, Route, Routes } from "react-router-dom";
+import Background from "./components/Background";
 import Home from "./pages/Home";
 import Projects from "./pages/Projects";
 import About from "./pages/About";
 import Contact from "./pages/Contact";
 import styles from "./App.module.css";
 import ProjectDetail from "./pages/ProjectDetail";
+import { NavLink, Route, Routes, useLocation } from "react-router-dom";
 
 export default function App() {
+  const location = useLocation();
+
   return (
     <div className={styles.app}>
+      {/* Persistent background (never re-mounted, never keyed) */}
+      <Background />
+
       <header className={styles.header}>
         <div className={`container ${styles.headerInner}`}>
           <NavLink to="/" className={styles.brand}>
@@ -33,13 +39,15 @@ export default function App() {
       </header>
 
       <main className={`container ${styles.main}`}>
-        <Routes>
-          <Route path="/" element={<Home />} />
-          <Route path="/projects" element={<Projects />} />
-          <Route path="/about" element={<About />} />
-          <Route path="/contact" element={<Contact />} />
-          <Route path="/projects/:slug" element={<ProjectDetail />} />
-        </Routes>
+        <div className={styles.pageTransition}>
+          <Routes location={location} key={location.pathname}>
+            <Route path="/" element={<Home />} />
+            <Route path="/projects" element={<Projects />} />
+            <Route path="/about" element={<About />} />
+            <Route path="/contact" element={<Contact />} />
+            <Route path="/projects/:slug" element={<ProjectDetail />} />
+          </Routes>
+        </div>
       </main>
 
       <footer className={styles.footer}>

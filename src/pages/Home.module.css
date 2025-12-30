@@ -1,5 +1,4 @@
 .page {
-  /* Page personality via variable overrides */
   --accent: #7c5cff;
   display: grid;
   gap: 18px;
@@ -15,6 +14,13 @@
       transparent 60%
     ),
     var(--panel);
+}
+
+.ctaRow {
+  display: flex;
+  gap: 12px;
+  margin-top: 14px;
+  flex-wrap: wrap;
 }
 
 .grid {

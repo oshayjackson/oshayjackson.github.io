@@ -3,6 +3,7 @@ import useDocumentTitle from "../hooks/useDocumentTitle";
 
 export default function Contact() {
   useDocumentTitle("Contact — Oshay Jackson");
+
   return (
     <section className={styles.page}>
       <h1 className="h1">Contact</h1>

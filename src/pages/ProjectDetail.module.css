@@ -1,5 +1,4 @@
 .page {
-  /* Page personality */
   --accent: #22c55e;
   display: grid;
   gap: 18px;
@@ -100,7 +99,7 @@
 
 .articleSection {
   display: grid;
-  gap: 6px;
+  gap: 8px;
   padding-top: 14px;
 }
 
@@ -111,10 +110,10 @@
 
 .sectionTitle {
   margin: 0;
-  font-size: 16px;
+  font-size: 12px;
   letter-spacing: 0.6px;
   text-transform: uppercase;
-  font-weight: 600;
+  font-weight: 700;
   color: color-mix(in srgb, var(--accent) 70%, var(--text));
 }
 
@@ -122,7 +121,7 @@
   margin: 0;
   color: var(--muted);
   line-height: 1.6;
-  max-width: 100ch;
+  max-width: 85ch;
   text-wrap: pretty;
   overflow-wrap: anywhere;
 }

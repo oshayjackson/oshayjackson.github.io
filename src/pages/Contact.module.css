@@ -13,6 +13,7 @@
   align-items: baseline;
   justify-content: space-between;
   gap: 12px;
+  flex-wrap: wrap;
 }
 
 .label {
@@ -25,5 +26,12 @@
 }
 
 .value:hover {
+  text-decoration: none;
+}
+
+.value:focus-visible {
+  outline: 2px solid color-mix(in srgb, var(--accent) 70%, white);
+  outline-offset: 3px;
+  border-radius: 8px;
   text-decoration: none;
 }

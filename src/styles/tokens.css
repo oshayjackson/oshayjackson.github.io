@@ -1,22 +1,38 @@
 :root {
   /* Layout */
-  --max-width: 1040px;
+  --max-width: 1080px;
   --page-padding: 20px;
-  --radius: 16px;
+
+  /* Geometry */
+  --radius: 22px;
+  --radius-pill: 999px;
 
   /* Typography */
-  --font-sans: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto,
-    Helvetica, Arial, "Apple Color Emoji", "Segoe UI Emoji";
+  --font-sans: Nunito, system-ui, -apple-system, Segoe UI, Roboto, Helvetica,
+    Arial, "Apple Color Emoji", "Segoe UI Emoji";
   --text-base: 16px;
 
-  /* Colors (defaults; pages can override via CSS vars) */
-  --bg: #0b0c10;
-  --panel: rgba(255, 255, 255, 0.06);
-  --border: rgba(255, 255, 255, 0.12);
-  --text: rgba(255, 255, 255, 0.92);
-  --muted: rgba(255, 255, 255, 0.72);
-  --accent: #7c5cff;
+  /* Background */
+  --bg: #070a12;
 
-  /* Effects */
-  --shadow: 0 10px 30px rgba(0, 0, 0, 0.35);
+  /* Glass surfaces (slightly cooler) */
+  --panel: rgba(210, 235, 255, 0.09);
+  --panel-strong: rgba(210, 235, 255, 0.14);
+
+  /* Borders (cooler, less gray) */
+  --border: rgba(210, 235, 255, 0.14);
+  --border-strong: rgba(210, 235, 255, 0.22);
+
+  /* Text */
+  --text: rgba(255, 255, 255, 0.92);
+  --muted: rgba(235, 245, 255, 0.74);
+  --subtle: rgba(235, 245, 255, 0.56);
+
+  /* Accents (match the sky/sea vibe) */
+  --accent: #69d6ff;
+  --accent-2: #5cf1c6;
+
+  /* Shadows */
+  --shadow: 0 24px 90px rgba(0, 0, 0, 0.45);
+  --shadow-soft: 0 12px 40px rgba(0, 0, 0, 0.25);
 }

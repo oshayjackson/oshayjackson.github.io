@@ -18,25 +18,8 @@
   grid-column: span 6;
 }
 
-.card {
-  padding: 18px;
-  grid-column: span 6;
-  border-top: 2px solid color-mix(in srgb, var(--accent) 60%, transparent);
-}
-
-.h2 {
-  margin: 0 0 8px;
-  font-size: 18px;
-}
-
-.p {
-  margin: 0;
-  color: var(--muted);
-  line-height: 1.6;
-}
-
 @media (max-width: 800px) {
-  .card {
+  .col {
     grid-column: span 12;
   }
 }

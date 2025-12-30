@@ -12,6 +12,15 @@ export default function Home() {
           Portfolio showcasing selected projects and technical case studies,
           built with full UI control.
         </p>
+
+        <div className={styles.ctaRow}>
+          <a className="btn btnPrimary" href="#/projects">
+            View Projects
+          </a>
+          <a className="btn btnGhost" href="#/contact">
+            Contact
+          </a>
+        </div>
       </div>
 
       <div className={styles.grid}>

@@ -3,12 +3,13 @@ import useDocumentTitle from "../hooks/useDocumentTitle";
 
 export default function About() {
   useDocumentTitle("About — Oshay Jackson");
+
   return (
     <section className={styles.page}>
       <h1 className="h1">About</h1>
       <p className="lead">
-        Write a short narrative about what you build, what you optimize for, and
-        what you want next.
+        I build reliable systems and polished user experiences, with a focus on
+        clarity, maintainability, and performance.
       </p>
 
       <div className={`card ${styles.card}`}>
